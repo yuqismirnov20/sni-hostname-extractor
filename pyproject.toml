@@ -1,6 +1,6 @@
 [project]
 name = "sni-hostname-extractor"
-version = "0.1.1"
+version = "0.1.2"
 description = "Parse the TLS ClientHello byte stream from a captured TCP segment and extract the Server Name extension value."
 requires-python = ">=3.10"
 dependencies = []
