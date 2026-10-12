@@ -35,3 +35,10 @@ The legacy record version field is accepted for values `0x0301`–`0x0304`.
 Real ClientHellos use `0x0301` here regardless of the version actually
 negotiated; the check exists to reject obviously non-TLS input, not to enforce
 a specific TLS version.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
